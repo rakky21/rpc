@@ -8,15 +8,15 @@ var questions = [
     { q: 'Does your password require a lower case?', n: lower },
     { q: 'Does your password require a symbol?', n: symbol },
     { q: 'Does your password require a number?', n: number },
-    // { q: 'You are required to have a minimum of 8 characters.', a: 't' ,n:"passlength" } first q asked
 ];
-
-
-const answers = []
 
 function generatePassword() {
     var possible = []
     var passlength = prompt("How long you want the password to be? (8-128)")
+    if (passlength < 8 || passlength > 128) {
+        alert("Number needs to be between 8 or 128")
+        return;
+    }
     // Loop over every question object
     for (var i = 0; i < questions.length; i++) {
         // Display current question to user and ask OK/Cancel
@@ -25,40 +25,29 @@ function generatePassword() {
             possible = possible.concat(questions[i].n)
         }
     }
-
+    if (possible.length === 0) {
+        alert("You need to pick at least one");
+        return
+    }
     console.log(possible)
     var password = ""
-    for (var i = 0; i < passlength; i++){
-var num = Math.floor(Math.random() *possible.length)
-var char = possible[num]
-password = char + password
+    for (var i = 0; i < passlength; i++) {
+        var num = Math.floor(Math.random() * possible.length)
+        var char = possible[num]
+        password = char + password
     }
     return password
-    // function writePassword() {
-    //     // var password = generatePassword();
-    //     var passwordText = document.querySelector("#password");
-    //     passwordText.value = password;
-    // }
-    // generateBtn.addEventListener("click", writePassword);
-    // //loop using randomnisation of all possible characters. This will create a new password
-    // document.getElementById("password").textContent = password
-    // var generateBtn = document.querySelector('#generate');
-    // generateBtn.addEventListener('click', showQuestions)
-    // Displays the current count on the page
 }
- 
-// Assignment code here
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generateBtn");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+    passwordText.value = password;
 
 }
 

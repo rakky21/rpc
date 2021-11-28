@@ -1,10 +1,9 @@
 
-# Note Taker Starter Code
-
-# Note taker
+# rpc
 
 ## Description
-In this site, you will be able to add as many note as you would like and delete them as needed.
+In this site, you'll be able to randomly generate a password according to your criteria.
+When you hit the "Generate Password" button, you will be prompted by some questions in order to generate the kind of password you would like.
 
 The application can be reached at:
 
@@ -12,18 +11,10 @@ https://github.com/rakky21/rpc# rpc
 
 https://rakky21.github.io/rpc/
 
-
-## Usage
-### 
-1. When you click on "Get Started" it prompts you to the note taking section.
-2. Enter a title and a note on the text.
-3. Once you're done with the note you can save it.
-4. When you click on the title of the note on the left you will see the comment.
-5. When you click on the Trash Icon, it will delete that note.
-
 ## Snapshots
-![Deleted notes](public/assets/deletenotes.jpg) 
-![Added notes](public/assets/addednotes.jpg) 
+![Password](assets/example.jpg) 
+![Password Generated](assets/example2.jpg) 
+
 
 ## Instructions 
 
